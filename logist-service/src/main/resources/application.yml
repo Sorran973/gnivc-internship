@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: logist-service
+
+server:
+  port: 8763
+
+eureka:
+  server: 8761
+  client:
+    service-url:
+      defaultZone: http://localhost:${eureka.server}/eureka
+  instance:
+    prefer-ip-address: true
