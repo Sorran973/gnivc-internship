@@ -8,12 +8,12 @@ import org.springframework.web.reactive.result.view.RedirectView;
 public class DemoController {
 
     @GetMapping("/demo")
-    public String hello() {
-        return "hello";
+    public String demo() {
+        return "Hello demo";
     }
-//
-//    @PostMapping("/key")
-//    public String hello() {
-//        return ;
-//    }
+
+    @GetMapping("/user")
+    public String user() {
+        return "Hello User!";
+    }
 }

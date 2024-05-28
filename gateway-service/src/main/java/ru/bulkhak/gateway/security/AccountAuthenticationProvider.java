@@ -32,7 +32,7 @@ public class AccountAuthenticationProvider  implements ReactiveAuthenticationMan
 
         return jwtMono
                 .map(jwt -> getUserDetailsFromJwt(jwt))
-                .map(userDetails -> (Authentication) new UsernamePasswordAuthenticationToken(
+                .map(userDetails -> new UsernamePasswordAuthenticationToken(
                 userDetails,
                 authenticationToken.getCredentials(),
                 userDetails.getAuthorities()

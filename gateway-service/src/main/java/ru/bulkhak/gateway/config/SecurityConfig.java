@@ -22,9 +22,8 @@ public class SecurityConfig {
                     .authorizeExchange(requests -> {
                         requests.pathMatchers("/openid-connect/**").permitAll();
                         requests.pathMatchers("/demo").authenticated();
-                            requests.pathMatchers("manager.html").hasRole("ROLE_USER");
-//                                requests.anyExchange().authenticated();
-                            requests.anyExchange().permitAll();
+                        requests.pathMatchers("/user").hasAnyAuthority("ROLE_USER");
+                        requests.anyExchange().authenticated();
                     });
 
             http.oauth2ResourceServer(resourceServerConfigurer ->
